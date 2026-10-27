@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172554">
+  <meta name="description" content="Personal website Yeni Anita — Finance, Financial Control, cost analysis, budget control, and Workday.">
+  <title>Yeni Anita — Finance &amp; Financial Control</title>
+  <style>
+    :root{--navy:#172554;--blue:#2563eb;--purple:#7c3aed;--ink:#18223b;--muted:#64748b;--line:#e2e8f0;--paper:#f8faff;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.65}
+    a{color:inherit}
+    .wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(248,250,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(226,232,240,.85)}
+    nav{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:20px}
+    .brand{font-weight:800;letter-spacing:-.04em;color:var(--navy);text-decoration:none;font-size:1.15rem}
+    .brand span{color:var(--purple)}
+    .links{display:flex;gap:25px;align-items:center}
+    .links a{text-decoration:none;color:#475569;font-size:.92rem;font-weight:600}
+    .links a:hover{color:var(--purple)}
+    .hero{padding:92px 0 76px;overflow:hidden;position:relative;background:radial-gradient(ellipse at 80% 10%,rgba(124,58,237,.13),transparent 38%),radial-gradient(ellipse at 10% 90%,rgba(37,99,235,.10),transparent 40%)}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.13em}
+    .dot{width:8px;height:8px;border-radius:50%;background:#8b5cf6;box-shadow:0 0 0 5px rgba(139,92,246,.12)}
+    h1{font-size:clamp(2.8rem,6vw,5.1rem);line-height:1.02;letter-spacing:-.065em;margin:22px 0 20px;color:var(--navy)}
+    h1 em{font-style:normal;background:linear-gradient(100deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:1.12rem;color:#52617a;max-width:620px;margin:0 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:12px;font-weight:750;text-decoration:none;border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(37,99,235,.12)}
+    .primary{background:linear-gradient(110deg,var(--blue),var(--purple));color:white;border-color:transparent}
+    .secondary{background:white;color:var(--navy)}
+    .profile-card{background:rgba(255,255,255,.82);border:1px solid #e6e9f5;border-radius:28px;padding:28px;box-shadow:0 24px 70px rgba(30,41,90,.10);position:relative}
+    .monogram{height:100px;width:100px;border-radius:26px;display:grid;place-items:center;font-size:2.3rem;font-weight:850;letter-spacing:-.08em;color:white;background:linear-gradient(135deg,#2563eb,#7c3aed);box-shadow:0 14px 30px rgba(99,102,241,.26)}
+    .profile-card h2{margin:20px 0 3px;font-size:1.45rem;color:var(--navy)}
+    .role{color:var(--purple);font-weight:750;font-size:.96rem}
+    .card-line{height:1px;background:var(--line);margin:22px 0}
+    .mini-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#94a3b8;font-weight:800}
+    .tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .tag{background:#f1f5ff;border:1px solid #e0e7ff;color:#384a83;padding:6px 10px;border-radius:9px;font-size:.8rem;font-weight:650}
+    section{padding:76px 0}
+    .section-head{max-width:650px;margin-bottom:32px}
+    .kicker{font-size:.78rem;color:var(--purple);font-weight:850;text-transform:uppercase;letter-spacing:.15em}
+    h2.section-title{font-size:clamp(2rem,4vw,3rem);line-height:1.12;letter-spacing:-.045em;color:var(--navy);margin:10px 0 12px}
+    .section-head p,.about-copy{color:var(--muted);font-size:1.02rem}
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+    .stat-card{border-radius:22px;padding:26px;background:linear-gradient(140deg,#172554,#3730a3);color:white;min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
+    .stat-card strong{font-size:2.5rem;line-height:1;letter-spacing:-.06em}
+    .stat-card span{color:#dbeafe}
+    .about-copy p{margin-top:0}
+    .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .skill{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;min-height:170px}
+    .skill-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:#4338ca;background:linear-gradient(135deg,#dbeafe,#ede9fe);font-weight:900;font-size:1.1rem}
+    .skill h3{margin:16px 0 7px;color:var(--navy);font-size:1.05rem}
+    .skill p{margin:0;color:var(--muted);font-size:.91rem}
+    .timeline{border-left:2px solid #dbeafe;margin-left:8px;padding-left:25px;display:grid;gap:24px}
+    .job{position:relative;background:white;border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+    .job:before{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--purple);left:-33px;top:25px;box-shadow:0 0 0 5px #ede9fe}
+    .job h3{margin:0;color:var(--navy);font-size:1.05rem}
+    .job .company{font-weight:700;color:var(--blue);font-size:.93rem}
+    .job p{margin:8px 0 0;color:var(--muted);font-size:.92rem}
+    .note{font-size:.82rem;color:#94a3b8;margin-top:14px}
+    .contact{background:linear-gradient(120deg,#172554,#312e81);color:white;border-radius:28px;padding:44px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .contact h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.1;letter-spacing:-.04em;margin:8px 0 12px}
+    .contact p{color:#dbeafe;max-width:560px;margin:0}
+    .contact .btn{background:white;color:var(--navy);white-space:nowrap}
+    footer{padding:28px 0;color:#94a3b8;font-size:.85rem}
+    footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:760px){.hero{padding:60px 0}.hero-grid,.about-grid{grid-template-columns:1fr;gap:30px}.profile-card{max-width:480px}.skill-grid{grid-template-columns:1fr 1fr}.links{gap:13px}.links a{font-size:.82rem}.contact{padding:30px;align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{width:min(100% - 28px,1080px)}nav{min-height:64px}.links{gap:10px}.links a:nth-child(2){display:none}.hero-grid{gap:28px}.skill-grid{grid-template-columns:1fr}section{padding:58px 0}.contact{border-radius:20px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Navigasi utama">
+      <a class="brand" href="#home">Yeni<span>.</span></a>
+      <div class="links">
+        <a href="#about">Tentang</a>
+        <a href="#expertise">Keahlian</a>
+        <a href="#experience">Pengalaman</a>
+        <a href="#contact">Kontak</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Finance · Financial Control</div>
+          <h1>Hai, saya<br><em>Yeni Anita.</em></h1>
+          <p class="lead">Profesional Finance di Yayasan Bina Nusantara, dengan fokus pada financial control, analisis biaya, pengendalian anggaran, dan pemanfaatan sistem untuk mendukung proses keuangan yang lebih efektif.</p>
+          <div class="actions">
+            <a class="btn primary" href="#about">Kenali Saya <span aria-hidden="true">↗</span></a>
+            <a class="btn secondary" href="https://id.linkedin.com/in/yeni-anita-sinurat-71601149" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <aside class="profile-card" aria-label="Ringkasan profil">
+          <div class="monogram" aria-hidden="true">YA</div>
+          <h2>Yeni Anita</h2>
+          <div class="role">Finance Controller</div>
+          <div class="card-line"></div>
+          <div class="mini-label">Area profesional</div>
+          <div class="tag-list">
+            <span class="tag">Financial Control</span>
+            <span class="tag">Cost Analysis</span>
+            <span class="tag">Budget Control</span>
+            <span class="tag">Workday</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="stat-card">
+          <div class="mini-label" style="color:#c4b5fd">Pendekatan kerja</div>
+          <strong>Data →<br>Insight →<br>Action</strong>
+          <span>Mengubah data keuangan menjadi informasi yang membantu pengambilan keputusan.</span>
+        </div>
+        <div class="about-copy">
+          <div class="kicker">Tentang Saya</div>
+          <h2 class="section-title">Keuangan yang rapi, analisis yang bermakna.</h2>
+          <p>Saya Yeni Anita, profesional di bidang Finance yang bekerja di Yayasan Bina Nusantara. Saya tertarik pada bagaimana data keuangan dapat digunakan untuk memahami biaya, menjaga anggaran, meningkatkan efisiensi proses, dan mendukung keputusan bisnis.</p>
+          <p>Dalam pekerjaan, saya berfokus pada ketelitian, pemecahan masalah, kolaborasi dengan tim, serta pemanfaatan sistem seperti Workday untuk membantu proses keuangan berjalan lebih efektif.</p>
+          <p>Website ini menjadi ruang profesional untuk memperkenalkan bidang keahlian dan perjalanan karier saya.</p>
+        </div>
+      </div>
+    </section>
+    <section id="expertise" style="background:#f0f4ff">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Keahlian</div>
+          <h2 class="section-title">Fokus yang saya bawa ke pekerjaan.</h2>
+          <p>Area kerja yang mendukung transparansi biaya, disiplin anggaran, dan perbaikan proses keuangan.</p>
+        </div>
+        <div class="skill-grid">
+          <article class="skill"><div class="skill-icon" aria-hidden="true">↗</div><h3>Financial Control</h3><p>Mendukung pemantauan transaksi dan informasi keuangan agar tetap akurat dan terkontrol.</p></article>
+          <article class="skill"><div class="skill-icon" aria-hidden="true">⌕</div><h3>Cost Analysis</h3><p>Menganalisis komponen biaya, tren pengeluaran, dan peluang efisiensi untuk mendukung keputusan.</p></article>
+          <article class="skill"><div class="skill-icon" aria-hidden="true">▤</div><h3>Budget Control</h3><p>Membandingkan realisasi dengan anggaran dan membantu mengidentifikasi variasi yang perlu ditinjau.</p></article>
+          <article class="skill"><div class="skill-icon" aria-hidden="true">⌘</div><h3>Workday</h3><p>Menggunakan sistem keuangan dan alur kerja digital untuk membantu pengelolaan proses.</p></article>
+          <article class="skill"><div class="skill-icon" aria-hidden="true">✓</div><h3>Problem Solving</h3><p>Mengurai kendala secara sistematis dan bekerja sama untuk menemukan solusi yang praktis.</p></article>
+          <article class="skill"><div class="skill-icon" aria-hidden="true">◎</div><h3>Process Improvement</h3><p>Mencari peluang penyederhanaan proses, peningkatan ketelitian, dan efisiensi kerja.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Perjalanan Karier</div>
+          <h2 class="section-title">Pengalaman di bidang keuangan.</h2>
+          <p>Ringkasan perjalanan profesional berdasarkan informasi publik yang ditemukan. Detail tanggung jawab dan tanggal dapat diperbarui agar sesuai dengan CV terbaru.</p>
+        </div>
+        <div class="timeline">
+          <article class="job"><h3>Finance Controller</h3><div class="company">Bina Nusantara University</div><p>Pengalaman di bidang financial control dan proses keuangan.</p></article>
+          <article class="job"><h3>Accounting</h3><div class="company">Amos Cozy Hotel Jakarta</div><p>Pengalaman pada fungsi accounting.</p></article>
+          <article class="job"><h3>FAA</h3><div class="company">PT Fastrata Buana · Kapal Api Group</div><p>Pengalaman profesional pada fungsi administrasi/keuangan.</p></article>
+          <article class="job"><h3>Accounting</h3><div class="company">PT BFI Finance Indonesia Tbk</div><p>Pengalaman awal di bidang accounting.</p></article>
+        </div>
+        <p class="note">Catatan: ringkasan ini bukan CV lengkap. Nama jabatan dan perusahaan mengacu pada profil LinkedIn publik yang tampaknya relevan; silakan konfirmasi sebelum dipakai sebagai profil resmi.</p>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <div class="kicker" style="color:#c4b5fd">Terhubung</div>
+            <h2>Mari terhubung secara profesional.</h2>
+            <p>Untuk mengenal lebih lanjut perjalanan dan minat profesional saya, silakan kunjungi profil LinkedIn.</p>
+          </div>
+          <a class="btn" href="https://id.linkedin.com/in/yeni-anita-sinurat-71601149" target="_blank" rel="noopener noreferrer">Kunjungi LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>© <span id="year">2026</span> Yeni Anita</span><span>Personal website · Minimalist blue &amp; purple</span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
